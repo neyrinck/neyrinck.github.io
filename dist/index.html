@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050811"><title>Rotating galaxy filament | Tudorache et al. (2025)</title>  <script type="module" crossorigin src="/assets/index-m4nHwEbn.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BtfetRE7.css">
+</head>
+<body><canvas id="scene"></canvas><section id="controls" aria-label="Filament controls">
+  <div class="eyebrow">Cosmic filament / Prototype 04</div><h1>Inside a rotating filament</h1>
+  <p>Tudorache et al. (2025) · 15.4 Mpc filament · illustrative orbital flow</p>
+  <label for="flow-speed">Flow speed <output id="speed-label">1.0×</output></label>
+  <input id="flow-speed" type="range" min="0" max="3" value="1" step="0.1">
+  <label class="check"><input type="checkbox" id="travel"> Slow travel along axis</label>
+  <label class="check"><input type="checkbox" id="axis"> Show approximate filament spine</label>
+  <div class="section-label">Diffuse intergalactic medium (illustrative)</div>
+  <label class="check"><input type="checkbox" id="mist" checked> Flowing translucent wisps</label>
+  <label class="check"><input type="checkbox" id="trails" checked> Faint flow streaks</label>
+  <label for="mist-density">Mist brightness</label><input type="range" id="mist-density" min="0" max="0.35" value="0.14" step="0.01">
+  <label class="check"><input type="checkbox" id="galaxies" checked> 14 measured H I galaxies (gold)</label>
+  <label class="check"><input type="checkbox" id="optical" checked> SDSS spectroscopic galaxies (green)</label>
+  <label class="check"><input type="checkbox" id="illustrative" checked> Illustrative galaxies (dim lilac)</label>
+  <label class="check"><input type="checkbox" id="spin-axes" checked> Measured H I spin axes (magenta)</label>
+  <label class="check"><input type="checkbox" id="alternate-tilts"> Show alternative 3D tilts (dashed)</label>
+  <div id="catalog-status" class="catalog-status" aria-live="polite"></div>
+  <button id="reset-galaxies" type="button">Reset galaxy orbits to t = 0</button>
+  <button id="paper-view" type="button">View as Figure 2 (sky projection)</button>
+  <button id="view" type="button">Enter the filament (desktop)</button>
+  <small>Desktop: drag to orbit, scroll to zoom. Figure 2 view: north up, west right. Galaxies orbit illustratively; diffuse matter is a visualization, not detected emission. H I spin axes use Table 1 PA and inclination, with ambiguous tilt sense. Pale galaxies are not a catalog. An optional SDSS download populates green markers.</small>
+</section></body></html>

@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#020208" />
     <title>Rotating Filament — Light Field Prototype</title>
-    <script type="module" crossorigin src="/rotating-filament-vr/assets/index-BcdJjhGR.js"></script>
-    <link rel="stylesheet" crossorigin href="/rotating-filament-vr/assets/index-DhE0alVU.css">
+    <script type="module" crossorigin src="/rotating-filament-vr/assets/index-DPUIsv9w.js"></script>
+    <link rel="stylesheet" crossorigin href="/rotating-filament-vr/assets/index-BSynAF6n.css">
   </head>
   <body>
     <canvas id="scene"></canvas>
 
     <aside id="hud" aria-label="Desktop controls">
-      <div class="title">ROTATING FILAMENT</div>
-      <div class="subtitle">light-field / WebXR prototype · v0.16</div>
+      <div class="hud-header">
+        <div class="title">ROTATING FILAMENT</div>
+        <button id="hideHud" class="hud-visibility" type="button" aria-label="Hide controls">hide</button>
+      </div>
+      <div class="subtitle">light-field / WebXR prototype · v0.18</div>
 
       <label>
         View
@@ -54,6 +57,11 @@
       </label>
 
       <label>
+        Gas-column beam fraction <span id="gasFractionValue">25%</span>
+        <input id="gasFraction" type="range" min="0" max="1" step="0.01" value="0.25" />
+      </label>
+
+      <label>
         Galaxy blob opacity <span id="blobOpacityValue">0.55</span>
         <input id="blobOpacity" type="range" min="0" max="1" step="0.01" value="0.55" />
       </label>
@@ -61,6 +69,7 @@
       <div class="row toggles">
         <button id="toggleBeams" class="active">beams</button>
         <button id="toggleFixtures" class="active">wall lights</button>
+        <button id="toggleBlobs">blobs</button>
         <button id="toggleSound">sound</button>
       </div>
 
@@ -69,6 +78,8 @@
       <div id="metadata"></div>
       <div class="hint">Drag to orbit · scroll to zoom · R to recenter · Enter VR for Quest</div>
     </aside>
+
+    <button id="showHud" class="hud-show" type="button" aria-label="Show controls">controls</button>
 
     <div id="status">Earth = −y · plane of sky = xz · LOS depth is interpretive</div>
   </body>

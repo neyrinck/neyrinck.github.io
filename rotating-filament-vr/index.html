@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020208" />
+    <title>Rotating Filament — Light Field Prototype</title>
+    <script type="module" crossorigin src="/rotating-filament-vr/assets/index-Byje_Rtv.js"></script>
+    <link rel="stylesheet" crossorigin href="/rotating-filament-vr/assets/index-DhE0alVU.css">
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <aside id="hud" aria-label="Desktop controls">
+      <div class="title">ROTATING FILAMENT</div>
+      <div class="subtitle">light-field / WebXR prototype</div>
+
+      <label>
+        View
+        <div class="view-controls">
+          <select id="viewMode">
+            <option value="outside">Outside</option>
+            <option value="filament">Filament frame</option>
+            <option value="inhabit">Inhabit galaxy</option>
+          </select>
+          <button id="recenterView" type="button">recenter</button>
+        </div>
+      </label>
+
+      <div class="row galaxy-row">
+        <button id="prevGalaxy" aria-label="Previous galaxy">◀</button>
+        <div id="galaxyReadout">H I 01</div>
+        <button id="nextGalaxy" aria-label="Next galaxy">▶</button>
+      </div>
+
+      <label>
+        Time scale <span id="speedValue">1.00×</span>
+        <input id="speed" type="range" min="0" max="2.5" step="0.05" value="1" />
+      </label>
+
+      <label>
+        Flow coherence <span id="coherenceValue">0.82</span>
+        <input id="coherence" type="range" min="0" max="1" step="0.01" value="0.82" />
+      </label>
+
+      <label>
+        Mist brightness <span id="mistValue">0.72</span>
+        <input id="mist" type="range" min="0.05" max="1.2" step="0.01" value="0.72" />
+      </label>
+
+      <label>
+        Beam opacity <span id="beamOpacityValue">0.04</span>
+        <input id="beamOpacity" type="range" min="0" max="0.40" step="0.01" value="0.04" />
+      </label>
+
+      <label>
+        Galaxy blob opacity <span id="blobOpacityValue">0.55</span>
+        <input id="blobOpacity" type="range" min="0" max="1" step="0.01" value="0.55" />
+      </label>
+
+      <div class="row toggles">
+        <button id="toggleBeams" class="active">beams</button>
+        <button id="toggleFixtures" class="active">wall lights</button>
+        <button id="toggleSound">sound</button>
+      </div>
+
+      <button id="toggleSkyPlane" class="wide-toggle" type="button">project to sky plane (y = 0)</button>
+
+      <div id="metadata"></div>
+      <div class="hint">Drag to orbit · scroll to zoom · R to recenter · Enter VR for Quest</div>
+    </aside>
+
+    <div id="status">Earth = −y · plane of sky = xz · LOS depth is interpretive</div>
+  </body>
+</html>

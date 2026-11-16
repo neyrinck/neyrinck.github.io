@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#020208" />
     <title>Rotating Filament — Light Field Prototype</title>
-    <script type="module" crossorigin src="/rotating-filament-vr/assets/index-CO5hQLXA.js"></script>
-    <link rel="stylesheet" crossorigin href="/rotating-filament-vr/assets/index-BSynAF6n.css">
+    <script type="module" crossorigin src="/rotating-filament-vr/assets/index-BtjdOYzy.js"></script>
+    <link rel="stylesheet" crossorigin href="/rotating-filament-vr/assets/index-DiiSGlBE.css">
   </head>
   <body class="hud-hidden">
     <canvas id="scene"></canvas>
@@ -16,25 +16,9 @@
         <div class="title">ROTATING FILAMENT</div>
         <button id="hideHud" class="hud-visibility" type="button" aria-label="Hide controls">hide</button>
       </div>
-      <div class="subtitle">light-field / WebXR prototype · v0.21</div>
+      <div class="subtitle">light-field / WebXR prototype · v0.22</div>
 
-      <label>
-        View
-        <div class="view-controls">
-          <select id="viewMode">
-            <option value="outside">Outside</option>
-            <option value="filament">Filament frame</option>
-            <option value="inhabit">Inhabit galaxy</option>
-          </select>
-          <button id="recenterView" type="button">recenter</button>
-        </div>
-      </label>
-
-      <div class="row galaxy-row">
-        <button id="prevGalaxy" aria-label="Previous galaxy">◀</button>
-        <div id="galaxyReadout">H I 01</div>
-        <button id="nextGalaxy" aria-label="Next galaxy">▶</button>
-      </div>
+      <button id="recenterView" class="wide-toggle" type="button">recenter outside view</button>
 
       <label>
         Time scale <span id="speedValue">1.00×</span>
@@ -76,11 +60,15 @@
       <button id="toggleSkyPlane" class="wide-toggle" type="button">project to sky plane (x = 0)</button>
       <button id="resetGalaxiesT0" class="wide-toggle" type="button">reset galaxies to t = 0</button>
 
-      <div id="metadata"></div>
-      <div class="hint">Drag to orbit · scroll to zoom · R to recenter · Enter VR for Quest</div>
+      <div class="hint">Click near a galaxy for observed properties · Drag to orbit · scroll to zoom · R to recenter · Enter VR for Quest</div>
     </aside>
 
     <button id="showHud" class="hud-show" type="button" aria-label="Show controls">controls</button>
+
+    <aside id="galaxyInfoCard" class="galaxy-info-card" hidden aria-live="polite">
+      <button id="closeGalaxyInfo" class="galaxy-info-close" type="button" aria-label="Close galaxy information">×</button>
+      <div id="galaxyInfoContent"></div>
+    </aside>
 
     <div id="status">Earth = −x · plane of sky = yz · LOS depth is interpretive</div>
   </body>
